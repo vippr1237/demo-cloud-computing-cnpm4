@@ -10,13 +10,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyC0s7vuNVa_qvz1xrs9gynpQRIF6hgsUN4",
-  authDomain: "fir-cloud-computing-cnpm4.firebaseapp.com",
-  databaseURL: "https://fir-cloud-computing-cnpm4-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "fir-cloud-computing-cnpm4",
-  storageBucket: "fir-cloud-computing-cnpm4.appspot.com",
-  messagingSenderId: "870668749594",
-  appId: "1:870668749594:web:90ee60106ce1d6f350baa3"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 })
 
 const auth = firebase.auth();
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>💬 Live Chat for Demo Cloud Computing D14CNPM4 </h1>
+        <h1>💬 Live Chat for Demo Cloud Computing D14CNPM4</h1>
         <SignOut />
       </header>
 
